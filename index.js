@@ -1,6 +1,6 @@
 document.getElementById('signin').addEventListener('click', (e) => {
     e.preventDefault();
-    location.href = 'http://127.0.0.1:5173//Login.html'
+    location.href = 'http://127.0.0.1:5173/Login.html'
 })
 
 window.addEventListener('load', async (event) => {
@@ -42,7 +42,7 @@ window.addEventListener('load', async (event) => {
             let val = localStorage.getItem('id')
             console.log(val)
             if (!val) {
-                location.href = 'http://127.0.0.1:5173//Login.html'
+                location.href = 'http://127.0.0.1:5173/Login.html'
             } else {
                 let addButton = element
                 let rank = addButton.previousElementSibling.innerText.split(':')[1];

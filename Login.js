@@ -25,8 +25,8 @@ document.getElementById("submit").addEventListener('click', async (e) => {
         localStorage.setItem('id', id.data)
         location.href = 'http://127.0.0.1:5173/AfterLogin.html'
     }else{
-        document.getElementById('alert').innerHTML = `<div class="w-[550px] bg-indigo-800 m-auto my-4 py-0 rounded-2xl">
-        <div class="my-4 py-1">
+        document.getElementById('alert').innerHTML = `<div class="w-[550px] bg-indigo-800 m-auto py-0 rounded-2xl">
+        <div class="my-2 py-1">
             <span
                 class="mx-2 text-md bg-indigo-500 rounded-2xl px-3 text-white my-2 hover:bg-indigo-300 shadow-lg shadow-slate-900">
                 Warning
