@@ -1,3 +1,5 @@
+console.log("hello")
+
 window.addEventListener('load', async () => {
     let response = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=702a5d9a8a5513094a5fcf009d15249a&language=en-US&page=1')
     let val = await response.json();
@@ -133,7 +135,9 @@ document.getElementById('search').addEventListener('click', async (e) => {
 
 
 document.getElementById('signout').addEventListener('click', () => {
-    location.href = 'http://127.0.0.1:5173/';
+    location.href = `${location.origin}`;
     localStorage.clear();
+    console.log("Hwll")
+    
 })
 
