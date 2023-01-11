@@ -7,7 +7,7 @@ window.addEventListener('load', async (event) => {
     if (localStorage.getItem('id')) {
         location.href = 'http://127.0.0.1:5173/AfterLogin.html'
     }
-    const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=702a5d9a8a5513094a5fcf009d15249a&language=en-US&page=1')
+    const res = await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=702a5d9a8a5513094a5fcf009d15249a&language=en-US&page=1')
     let val = await res.json();
     console.log(val)
     let i = 1;

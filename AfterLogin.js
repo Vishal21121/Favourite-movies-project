@@ -1,7 +1,7 @@
 console.log("hello")
 
 window.addEventListener('load', async () => {
-    let response = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=702a5d9a8a5513094a5fcf009d15249a&language=en-US&page=1')
+    let response = await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=702a5d9a8a5513094a5fcf009d15249a&language=en-US&page=1')
     let val = await response.json();
     console.log(val)
     let i = 1;
