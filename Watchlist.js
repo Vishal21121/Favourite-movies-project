@@ -36,3 +36,7 @@ document.getElementById('signout').addEventListener('click', () => {
     location.href = 'http://127.0.0.1:5173/';
     localStorage.clear();
 })
+
+document.getElementById('prev').addEventListener('click', () => {
+    history.go(-1)
+})
