@@ -33,7 +33,7 @@ window.addEventListener('load', async () => {
 })
 
 document.getElementById('signout').addEventListener('click', () => {
-    location.href = 'http://127.0.0.1:5173/';
+    location.href = `${location.origin}`;
     localStorage.clear();
 })
 

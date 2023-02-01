@@ -1,11 +1,11 @@
 document.getElementById('signin').addEventListener('click', (e) => {
     e.preventDefault();
-    location.href = 'http://127.0.0.1:5173/Login.html'
+    location.href = `${location.origin}/Login.html`
 })
 
 window.addEventListener('load', async (event) => {
     if (localStorage.getItem('id')) {
-        location.href = 'http://127.0.0.1:5173/AfterLogin.html'
+        location.href = `${location.origin}/AfterLogin.html`
     }
     const res = await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=702a5d9a8a5513094a5fcf009d15249a&language=en-US&page=1')
     let val = await res.json();
@@ -42,7 +42,7 @@ window.addEventListener('load', async (event) => {
             let val = localStorage.getItem('id')
             console.log(val)
             if (!val) {
-                location.href = 'http://127.0.0.1:5173/Login.html'
+                location.href = `${location.origin}/Login.html`
             } else {
                 let addButton = element
                 let rank = addButton.previousElementSibling.innerText.split(':')[1];
@@ -69,8 +69,6 @@ window.addEventListener('load', async (event) => {
 
     });
 })
-
-
 
 
 let value;
@@ -113,9 +111,9 @@ document.getElementById('search').addEventListener('click', async (e) => {
     </div>
 </div>`
 
-    document.getElementById('add').addEventListener('click', async () => {
-        location.href = 'http://127.0.0.1:5173/Login.html'
-    })
+document.getElementById('add').addEventListener('click', async () => {
+    location.href = `${location.origin}/Login.html`
+})
 
 
 })

@@ -24,7 +24,7 @@ document.getElementById('submit').addEventListener('click',async (e)=>{
     let data = await res.json()
     if(data.statusCode == 200){
         localStorage.setItem('id', data.data)
-        location.href = 'http://127.0.0.1:5173/AfterLogin.html'
+        location.href = `${location.origin}/AfterLogin.html`
     }else{
         document.getElementById('alert').innerHTML = `<div class="w-[550px] bg-indigo-800 m-auto my-4 py-0 rounded-2xl">
         <div class="my-4 py-1">

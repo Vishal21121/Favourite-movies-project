@@ -61,7 +61,7 @@ window.addEventListener('load', async () => {
     })
 
     document.getElementById('Watchlist').addEventListener('click', async () => {
-        location.href = 'http://127.0.0.1:5173/Watchlist.html'
+        location.href = `${location.origin}/Watchlist.html`
     })
 
 

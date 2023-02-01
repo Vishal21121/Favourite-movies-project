@@ -23,7 +23,7 @@ document.getElementById("submit").addEventListener('click', async (e) => {
     let id = await res.json();
     if(id.statusCode == 200){
         localStorage.setItem('id', id.data)
-        location.href = 'http://127.0.0.1:5173/AfterLogin.html'
+        location.href = `${location.origin}/AfterLogin.html`
     }else{
         document.getElementById('alert').innerHTML = `<div class="w-[550px] bg-indigo-800 m-auto py-0 rounded-2xl">
         <div class="my-2 py-1">
@@ -45,5 +45,5 @@ document.getElementById("submit").addEventListener('click', async (e) => {
 
 
 document.getElementById('signup').addEventListener('click', () => {
-    location.href = 'http://127.0.0.1:5173/Signup.html'
+    location.href = `${location.origin}/Signup.html`
 })
