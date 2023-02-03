@@ -6,25 +6,24 @@ window.addEventListener('load', async () => {
     console.log(val)
     let i = 1;
     val.results.forEach(element => {
-        document.getElementById('cards-show').innerHTML += `<div class="max-w-sm my-8 border-2 bg-white shadow-xl shadow-gray-400 rounded-lg mx-2">
-            <img class="w-96 h-80" src="https://www.themoviedb.org/t/p/w220_and_h330_face/${element["backdrop_path"]}" alt="">
+        document.getElementById('cards-show').innerHTML += `<div class="w-[300px] my-8 border-2 bg-gradient-to-r from-blue-800 to-[#0B0C10] shadow-xl shadow-gray-400 rounded-lg mx-2 h-[500px] ">
+            <img class="h-48 w-80" src="https://www.themoviedb.org/t/p/w220_and_h330_face/${element["backdrop_path"]}" alt="">
         
-            <div class="mx-8 my-4">
-                <h3 class="font-sans font-bold text-xl text-gray-700 my-2">${element["original_title"]}</h3>
-        
-                <p class="text-md text-gray-700">${element["overview"]}</p>
+            <div class="mx-8 my-4 h-48">
+                <h3 class="font-sans font-bold text-md my-2 text-white">${element["original_title"]}</h3>
+                <p class="text-sm text-white">${element["overview"].substring(0,251)}</p>
             </div>
             <div class="my-8" id = ${i++}>
                 <span
-                    class="bg-gray-300 p-1 rounded-md mx-2 mb-1 text-sm text-black font-semibold hover:bg-gray-400 hover:cursor-pointer">Year:
+                    class="inline-block w-auto bg-gray-300 p-1 rounded-md mx-2 text-xs text-black font-semibold hover:bg-gray-400 hover:cursor-pointer">Year:
                     ${element['release_date']}
                 </span>
                 <span
-                    class="bg-gray-300 p-1 rounded-md mx-2 mb-1 text-sm text-black font-semibold hover:bg-gray-400 hover:cursor-pointer">Rank:
+                    class="inline-block w-auto bg-gray-300 p-1 rounded-md mx-2 text-xs text-black font-semibold hover:bg-gray-400 hover:cursor-pointer">Rank:
                     ${element['popularity']}
                 </span>
                 <button
-                    class="add text-white bg-blue-500 py-2 rounded-lg font-semibold px-5 text-base hover:bg-blue-700 mt-1 relative "
+                    class="add text-white w-16 bg-blue-500 py-2 rounded-md font-semibold text-xs hover:bg-gradient-to-r to-blue-800 from-[#0B0C10] relative"
                     ">Add movie</button>
             </div>
         </div>`
