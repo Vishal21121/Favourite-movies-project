@@ -12,11 +12,11 @@ window.addEventListener('load', async (event) => {
     console.log(val)
     let i = 1;
     val.results.forEach(element => {
-        document.getElementById('cards-show').innerHTML += `<div class="w-[300px] my-8 border-2 bg-gradient-to-r from-blue-800 to-[#0B0C10] shadow-xl shadow-gray-400 rounded-lg mx-2 h-[500px]">
+        document.getElementById('cards-show').innerHTML += `<div class="w-[300px] my-8 border-2 bg-gradient-to-b from-blue-800 to-[#0B0C10] shadow-xl shadow-gray-400 rounded-lg mx-2 h-[500px]">
         <img class="h-48 w-80" src="https://www.themoviedb.org/t/p/w220_and_h330_face/${element["backdrop_path"]}" alt="image cannot be rendered">
         <div class="mx-8 mt-4 h-48">
             <h3 class="font-sans font-bold text-md my-2 text-white">${element["original_title"]}</h3>
-            <p class="text-sm text-white">${element["overview"].substring(0,251)}</p>
+            <p class="text-sm text-white">${element["overview"].substring(0, 251)}</p>
         </div>
         <div class="relative top-[37px]" id = ${i++}>
             <span
@@ -80,35 +80,35 @@ document.getElementById('search').addEventListener('click', async (e) => {
             name: value
         })
     })
+    document.getElementById("header").innerHTML += `<button class="text-white bg-blue-700  rounded-lg font-semibold  text-base hover:bg-gradient-to-r from-blue-800 to-[#0B0C10] px-4 py-4 text-center" id="prev">Previous</button>`
     let val = await res.json();
     document.getElementById('heading').innerHTML = ''
-    document.getElementById('cards-show').innerHTML = `<div class="max-w-sm mx-auto border-2 my-4  bg-white shadow-xl shadow-gray-400 rounded-lg">
-    <img class="w-96 h-80" src="https://www.themoviedb.org/t/p/w220_and_h330_face/${val.data['results'][0]["backdrop_path"]}" alt="">
+    document.getElementById('cards-show').innerHTML = `<div class="w-[300px] my-8 border-2 bg-gradient-to-b from-blue-800 to-[#0B0C10] shadow-xl shadow-gray-400 rounded-lg mx-2 h-[500px]">
+    <img class="h-48 w-80" src="https://www.themoviedb.org/t/p/w220_and_h330_face/${val.data['results'][0]["backdrop_path"]}" alt="">
 
-    <div class="mx-8">
-        <h3 class="font-sans font-bold text-xl text-gray-700 my-2">${val.data['results'][0]["original_title"]}</h3>
-
-        <p class="text-sm text-gray-700">${val.data['results'][0]["overview"]}</p>
+    <div class="mx-8 my-4 h-48">
+        <h3 class="font-sans font-bold text-md my-2 text-white">${val.data['results'][0]["original_title"]}</h3>
+        <p class="text-sm text-white">${val.data['results'][0]["overview"].substring(0,251)}</p>
     </div>
 
     <div class="my-8">
         <span
-            class="bg-gray-300 p-1 rounded-md mx-2 mb-1 text-sm text-black font-semibold hover:bg-gray-400 hover:cursor-pointer">Year:
+            class="inline-block w-auto bg-gray-300 p-1 rounded-md mx-2 text-xs text-black font-semibold hover:bg-gray-400 hover:cursor-pointer">Year:
             ${val.data['results'][0]['release_date']}
         </span>
         <span
-            class="bg-gray-300 p-1 rounded-md mx-2 mb-1 text-sm text-black font-semibold hover:bg-gray-400 hover:cursor-pointer">Rank:
+            class="inline-block w-auto bg-gray-300 p-1 rounded-md mx-2 text-xs text-black font-semibold hover:bg-gray-400 hover:cursor-pointer">Rank:
             ${val.data['results'][0]['popularity']}
         </span>
         <button
-            class="text-white bg-blue-500 py-2 rounded-lg font-semibold px-5 text-base hover:bg-blue-700 mt-1 relative "
+            class="add text-white w-16 bg-blue-500 py-2 rounded-md font-semibold text-xs hover:bg-gradient-to-r to-blue-800 from-[#0B0C10] relative"
             id="add">Add movie</button>
     </div>
 </div>`
-
-document.getElementById('add').addEventListener('click', async () => {
-    location.href = `${location.origin}/Login.html`
-})
+    document.getElementById("prev").addEventListener('click',()=>history.go(0))
+    document.getElementById('add').addEventListener('click', async () => {
+        location.href = `${location.origin}/Login.html`
+    })
 
 
 })
