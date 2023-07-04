@@ -87,7 +87,7 @@ router.delete('/deleteMovie/:id', async (req, res) => {
 
 router.post('/movieFind', async (req, res) => {
     const { name } = req.body;
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=702a5d9a8a5513094a5fcf009d15249a&language=en-US&page=1&include_adult=false&query=${name}`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&page=1&include_adult=false&query=${name}`;
     const options = {
         method: 'GET',
         

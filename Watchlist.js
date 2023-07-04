@@ -15,7 +15,7 @@ window.addEventListener('load', async () => {
         <div class="mx-8 mt-4 h-48">
             <h3 class="font-sans font-bold text-md my-2 text-white">${element["title"]}</h3>
     
-            <p class="text-sm text-white">${element["desc"].substring(0,251)}</p>
+            <p class="text-sm text-white">${element["desc"].substring(0, 251)}</p>
         </div>
         <div class="relative top-[37px]">
             <span
@@ -53,7 +53,7 @@ document.getElementById('search').addEventListener('click', async (e) => {
 
     <div class="mx-8 my-4 h-48">
         <h3 class="font-sans font-bold text-md my-2 text-white">${val.data['results'][0]["original_title"]}</h3>
-        <p class="text-sm text-white">${val.data['results'][0]["overview"].substring(0,251)}</p>
+        <p class="text-sm text-white">${val.data['results'][0]["overview"].substring(0, 251)}</p>
     </div>
 
     <div class="my-8">
@@ -93,7 +93,7 @@ document.getElementById('search').addEventListener('click', async (e) => {
         })
         console.log(await res.json())
     })
-    
+
 })
 
 
@@ -103,9 +103,7 @@ document.getElementById('signout').addEventListener('click', () => {
 })
 
 document.getElementById('prev').addEventListener('click', () => {
-    if(document.getElementById('cards-show').childElementCount>1){
+    if (document.getElementById('cards-show').childElementCount > 0) {
         history.go(-1)
-    }else{
-        history.go(0)
     }
 })

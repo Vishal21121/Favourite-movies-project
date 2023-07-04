@@ -83,7 +83,7 @@ document.getElementById('search').addEventListener('click', async (e) => {
     document.getElementById("header").innerHTML += `<button class="text-white bg-blue-700  rounded-lg font-semibold  text-base hover:bg-gradient-to-r from-blue-800 to-[#0B0C10] px-4 py-4 text-center" id="prev">Previous</button>`
     let val = await res.json();
     document.getElementById('heading').innerHTML = ''
-    document.getElementById('cards-show').innerHTML = `<div class="w-[300px] my-8 border-2 bg-gradient-to-b from-blue-800 to-[#0B0C10] shadow-xl shadow-gray-400 rounded-lg mx-2 h-[500px]">
+    document.getElementById('cards-show').innerHTML = `<div class="w-[300px] my-8 border-2 bg-gradient-to-b from-blue-800 to-[#0B0C10] shadow-xl shadow-gray-400 rounded-lg mx-2 h-[500px] ">
     <img class="h-48 w-80" src="https://www.themoviedb.org/t/p/w220_and_h330_face/${val.data['results'][0]["backdrop_path"]}" alt="">
 
     <div class="mx-8 my-4 h-48">
